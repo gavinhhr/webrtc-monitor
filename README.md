@@ -1,6 +1,6 @@
 Remote Monitoring System  
 Engineering Application Practice Course Assignment  
-School of Electronics and Information Engineering, SYSU  
+School of Electronics and Information Technology, SYSU  
   
 
 Reference  
