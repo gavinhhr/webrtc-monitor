@@ -1,4 +1,4 @@
-Remote Monitoring Using WebRTC  
+Remote Monitor Using WebRTC  
 Coursework of Engineering Project Lesson  
 School of Electronics and Information Technology, SYSU  
   
