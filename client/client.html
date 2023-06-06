@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Remote Monitor Client</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/icon.ico" type="image/x-icon" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+
+        body {
+            background: linear-gradient(135deg, #4274b3, #ffbfbf) no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #loginPage,
+        #contentBox {
+            position: relative;
+        }
+
+        #loginPage {
+            display: flex;
+            justify-content: center;
+        }
+
+        #contentBox {
+            width: 562px;
+            height: 520px;
+            box-shadow: 0px 15px 40px #ffbfbf;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        #imgBox {
+            width: 260px;
+            height: 520px;
+        }
+
+        #imgBox img {
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        #content {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        #welcomeLine {
+            width: 100%;
+            text-align: center;
+            line-height: 1;
+            color: #9c9c9c;
+            font-size: 30px;
+            margin-top: 17px;
+        }
+
+        #inputBox {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .Input input {
+            width: 320px;
+            height: 48px;
+            font-size: 14px;
+            color: #6e6d6d;
+            border: 2px solid #6e6d6d;
+            line-height: 1;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            transition-duration: 0.5s;
+        }
+
+        .Input input:focus {
+            outline: none;
+            border: 2px solid #ffffff;
+            box-shadow: 0px 0px 5px #4274b3;
+            color: #4274b3;
+        }
+
+        .Input input::placeholder {
+            color: #b9b9b9;
+        }
+
+        #loginBtn {
+            display: block;
+            width: 100%;
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+            padding: 14px 40px;
+            border: 0;
+            background-color: #4274b3;
+            border-radius: 25px;
+            line-height: 1;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        #loginBtn:hover {
+            box-shadow: 0px 0px 5px #4274b3;
+            color: #4274b3;
+            background-color: #ffffff;
+        }
+
+        #loginBtn:disabled {
+            color: #4274b3;
+            background-color: #eaeaea;
+            cursor: not-allowed;
+        }
+
+        #videoBox {
+            width: 680px;
+            height: 520px;
+            box-shadow: 0px 15px 40px #ffbfbf;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        #widgetBox {
+            width: 300px;
+            height: 520px;
+        }
+
+        #widget {
+            width: 330px;
+            height: 520px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #callBtn {
+            display: block;
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+            padding: 14px 40px;
+            border: 0;
+            background-color: #4274b3;
+            border-radius: 25px;
+            line-height: 1;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        #callBtn:hover {
+            box-shadow: 0px 0px 5px #4274b3;
+            color: #4274b3;
+            background-color: #ffffff;
+        }
+
+        #callBtn:disabled {
+            color: #4274b3;
+            background-color: #eaeaea;
+            cursor: not-allowed;
+        }
+
+        #remoteVideo {
+            width: 640px;
+            height: 480px;
+            border-radius: 15px;
+            align-self: center;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            color: #eaeaea;
+            font-family: Arial;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loginPage" style="display: flex;">
+        <div id="imgBox">
+            <img src="./img/BG_1.jpg" alt="">
+        </div>
+        <div id="contentBox">
+            <div id="content">
+                <div id="welcomeLine">Welcome Back!</div>
+                <div id="inputBox">
+                    <div class="Input">
+                        <input id="UsernameInput" type="text" placeholder="Username" onfocus="this.placeholder=''"
+                            onblur="this.placeholder='Username'">
+                    </div>
+                    <div class="Input">
+                        <input id="PasswordInput" type="password" placeholder="Password" onfocus="this.placeholder=''"
+                            onblur="this.placeholder='Password'">
+                    </div>
+                </div>
+                <div id="buttonBox" style="margin-top: 20px;">
+                    <button id="loginBtn">LOG IN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="callPage" style="display: none;">
+        <div id="widgetBox">
+            <div id="widget">
+                <div id="welcomeLine">Remote Monitor</div>
+                <div id="buttonBox" style="margin-top: 40px;">
+                    <button id="callBtn">Connect</button>
+                </div>
+            </div>
+        </div>
+        <div id="videoBox">
+            <div id="content">
+                <video id="remoteVideo" autoplay controls></video>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">© 2023 Haoran Huang from SYSU</div>
+
+    <script src="client.js"></script>
+</body>
+
+</html>
