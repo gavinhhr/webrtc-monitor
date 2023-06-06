@@ -1,5 +1,5 @@
 Remote Monitoring System  
-Engineering Application Practice Course Assignment  
+Coursework of Engineering Application Practice Lesson  
 School of Electronics and Information Technology, SYSU  
   
 
