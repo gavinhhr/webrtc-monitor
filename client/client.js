@@ -30,9 +30,9 @@ const configuration = {
                 "urls": "stun:47.115.205.65:3478",
             },
             {
-                "urls": "turn:47.115.205.65:3478",
-                "username": "hhr",
-                "credential": "123456"
+                "urls": "urls",
+                "username": "username",
+                "credential": "credential"
             }
         ]
 };
