@@ -37,9 +37,9 @@ def initPC():
     global RTCPeerConnectionCreated
     # configure STUN/TURN server
     STUNServer = aiortc.RTCIceServer(urls="stun:47.115.205.65:3478")
-    TURNServer = aiortc.RTCIceServer(urls="turn:47.115.205.65:3478",
-                                     username="hhr",
-                                     credential="123456")
+    TURNServer = aiortc.RTCIceServer(urls="urls",
+                                     username="username",
+                                     credential="credential")
     configuration = aiortc.RTCConfiguration(
         iceServers=[STUNServer, TURNServer])
     # initialize RTCPeerConnection
