@@ -32,7 +32,7 @@ const configuration = {
             },
             {
                 "urls": "urls",
-                "username": "usernam",
+                "username": "username",
                 "credential": "credential"
             }
         ]
