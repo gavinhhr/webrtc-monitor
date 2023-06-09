@@ -6,6 +6,7 @@ var callPage = document.querySelector("#callPage");
 var loginBtn = document.querySelector("#loginBtn");
 var callBtn = document.querySelector("#callBtn");
 var remoteVideo = document.querySelector("#remoteVideo");
+loginPage.style.opacity = 1;
 
 // signaling server IP address
 var serverURL = "ws://" + location.hostname + ":9091";
@@ -31,7 +32,7 @@ const configuration = {
             },
             {
                 "urls": "urls",
-                "username": "username",
+                "username": "usernam",
                 "credential": "credential"
             }
         ]
@@ -224,8 +225,16 @@ function handleLogin(success) {
         alert("Username or password is wrong, try again.");
         loginBtn.disabled = false;
     } else {
-        loginPage.style.display = "none";
-        callPage.style.display = "flex";
+        // loginPage.style.display = "none";
+        // callPage.style.display = "flex";
+        loginPage.style.opacity = 0;
+        setTimeout(() => {
+            loginPage.style.display = "none";
+            callPage.style.display = "flex";
+        }, 1000)
+        setTimeout(() => {
+            callPage.style.opacity = 1;
+        }, 1000)
     }
 };
 
